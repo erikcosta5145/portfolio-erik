@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Erik Nascimento da Costa – Estudante de Ciência da Computação na UNINTER" />
+  <title>Erik Nascimento | Dev Portfolio</title>
+
+  <!-- Fontes: Orbitron (display sci-fi) + Syne (corpo moderno) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="light-theme" id="body">
+
+  <!-- =============================================
+       CURSOR PERSONALIZADO (decorativo)
+  =============================================== -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- =============================================
+       FUNDO ANIMADO - GRID TECNOLÓGICO
+  =============================================== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow-2" aria-hidden="true"></div>
+
+  <!-- =============================================
+       HEADER / NAVEGAÇÃO PRINCIPAL
+  =============================================== -->
+  <header id="header">
+    <nav class="nav-container" role="navigation" aria-label="Navegação principal">
+
+      <!-- Logo com estilo de código -->
+      <a href="#inicio" class="nav-logo" aria-label="Ir para o início">
+        <span class="logo-bracket">&lt;</span>Erik<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+      </a>
+
+      <!-- Hamburguer mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Links de navegação -->
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#sobre"    class="nav-link" aria-label="Ir para Sobre mim"><span class="nav-num">01.</span>Sobre</a></li>
+        <li><a href="#formacao" class="nav-link" aria-label="Ir para Formação"><span class="nav-num">02.</span>Formação</a></li>
+        <li><a href="#portfolio" class="nav-link" aria-label="Ir para Portfólio"><span class="nav-num">03.</span>Projetos</a></li>
+        <li><a href="#contato"  class="nav-link" aria-label="Ir para Contato"><span class="nav-num">04.</span>Contato</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+            <span class="theme-icon" id="themeIcon">☀️</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =============================================
+       HERO SECTION
+  =============================================== -->
+  <section id="inicio" class="hero-section" aria-label="Apresentação inicial">
+
+    <!-- Partículas decorativas -->
+    <div class="hero-particles" aria-hidden="true">
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+      <div class="particle p5"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Status online -->
+      <div class="hero-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Disponível para oportunidades</span>
+      </div>
+
+      <!-- Saudação -->
+      <p class="hero-greeting">// Olá, eu sou</p>
+
+      <!-- Nome principal -->
+      <h1 class="hero-name">
+        <span class="name-line-1">Erik</span>
+        <span class="name-line-2">Nascimento<span class="name-accent">.</span></span>
+      </h1>
+
+      <!-- Efeito digitação -->
+      <div class="hero-typing-wrapper">
+        <span class="typing-prefix">$ </span>
+        <p class="hero-title" id="typingText"></p>
+      </div>
+
+      <!-- Botões de ação -->
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary">
+          <span class="btn-text">Entrar em contato</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#portfolio" class="btn btn-outline">
+          <span class="btn-text">Ver projetos</span>
+        </a>
+      </div>
+
+      <!-- Redes sociais -->
+      <div class="social-links" aria-label="Redes sociais">
+        <!-- GitHub corrigido: erikcosta5145 -->
+        <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub de Erik">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/eriknascosta" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn de Erik">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="mailto:eriknascosta01@gmail.com" class="social-link" aria-label="E-mail de Erik">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Decoração lateral: código estético -->
+    <div class="hero-code-deco" aria-hidden="true">
+      <pre class="code-lines">
+<span class="cl-comment">// Erik Nascimento da Costa</span>
+<span class="cl-keyword">const</span> <span class="cl-var">dev</span> = {
+  <span class="cl-prop">nome</span>: <span class="cl-str">"Erik Nascimento"</span>,
+  <span class="cl-prop">curso</span>: <span class="cl-str">"Ciência da Computação"</span>,
+  <span class="cl-prop">status</span>: <span class="cl-str">"aprendendo"</span>,
+  <span class="cl-prop">foco</span>: [<span class="cl-str">"Web"</span>, <span class="cl-str">"Tech"</span>],
+}
+      </pre>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#sobre" class="scroll-indicator" aria-label="Rolar para próxima seção">
+      <div class="scroll-line"></div>
+      <span class="scroll-label">scroll</span>
+    </a>
+  </section>
+
+  <!-- =============================================
+       SEÇÃO: SOBRE MIM
+  =============================================== -->
+  <section id="sobre" class="section sobre-section" aria-labelledby="sobre-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">01.</span>
+        <h2 id="sobre-titulo" class="section-title">Sobre mim</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="sobre-grid">
+
+        <!-- Avatar card -->
+        <div class="sobre-image-wrapper">
+          <div class="profile-card">
+            <div class="avatar-frame" aria-hidden="true">
+              <div class="avatar-corner tl"></div>
+              <div class="avatar-corner tr"></div>
+              <div class="avatar-corner bl"></div>
+              <div class="avatar-corner br"></div>
+            </div>
+            <div class="avatar-placeholder" aria-label="Foto de perfil de Erik Nascimento">
+              <span class="avatar-initials">EN</span>
+            </div>
+            <div class="availability-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              Buscando oportunidades em TI
+            </div>
+            <!-- Stats do perfil -->
+            <div class="profile-stats">
+              <div class="stat">
+                <span class="stat-num">21</span>
+                <span class="stat-label">anos</span>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat">
+                <span class="stat-num">SP</span>
+                <span class="stat-label">Brasil</span>
+              </div>
+              <div class="stat-divider" aria-hidden="true"></div>
+              <div class="stat">
+                <span class="stat-num">2024</span>
+                <span class="stat-label">início</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="sobre-text">
+          <h3 class="sobre-subtitle">Olá! Prazer em te conhecer 👋</h3>
+
+          <p>
+            Sou estudante de <strong>Ciência da Computação</strong> na UNINTER e profissional com
+            experiência na área de produção, atuando com montagem, acabamento e organização de processos.
+          </p>
+          <p>
+            Tenho formação técnica em <strong>Administração</strong>, o que me proporcionou uma base sólida
+            em rotinas administrativas, logística e organização. Busco oportunidades para desenvolver
+            minha carreira na área de tecnologia, com foco em aprendizado contínuo e evolução profissional.
+          </p>
+
+          <!-- Hobbies -->
+          <div class="hobbies" aria-label="Hobbies e interesses">
+            <h4>// Interesses &amp; Hobbies</h4>
+            <div class="hobby-tags">
+              <span class="tag">💻 Tecnologia</span>
+              <span class="tag">🎮 Games</span>
+              <span class="tag">📖 Programação</span>
+              <span class="tag">🌐 Conteúdos digitais</span>
+              <span class="tag">📈 Desenvolvimento pessoal</span>
+              <span class="tag">🖥️ Informática</span>
+            </div>
+          </div>
+
+          <!-- Info rápida -->
+          <div class="quick-info">
+            <div class="info-item">
+              <span class="info-label">📍</span>
+              <span>São Paulo – SP, Brasil</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">🎂</span>
+              <span id="ageDisplay"></span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">📧</span>
+              <a href="mailto:eriknascosta01@gmail.com">eriknascosta01@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-wrapper">
+        <h3 class="skills-title">// Habilidades Técnicas</h3>
+        <div class="skills-grid">
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>HTML5</span>
+              <span class="skill-percent">55%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="55"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>CSS3</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="50"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>JavaScript</span>
+              <span class="skill-percent">35%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="35"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Lógica de Programação</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="50"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Organização de Processos</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span>Rotinas Administrativas</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              <div class="skill-progress" data-width="80"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SEÇÃO: FORMAÇÃO
+  =============================================== -->
+  <section id="formacao" class="section formacao-section" aria-labelledby="formacao-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">02.</span>
+        <h2 id="formacao-titulo" class="section-title">Formação</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="formacao-grid">
+
+        <!-- Educação -->
+        <div class="formacao-col">
+          <h3 class="col-title">
+            <span class="col-icon" aria-hidden="true">🎓</span> Educação
+          </h3>
+          <div class="timeline" role="list" aria-label="Histórico educacional">
+
+            <article class="timeline-item current" role="listitem">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-period">2024 – 2028 (cursando)</span>
+                <h4>Ciência da Computação</h4>
+                <p class="timeline-institution">Centro Universitário UNINTER</p>
+                <p class="timeline-desc">
+                  Graduação com foco em fundamentos da computação, desenvolvimento de sistemas,
+                  banco de dados, redes de computadores e programação web.
+                </p>
+                <span class="timeline-badge current-badge">Em andamento</span>
+              </div>
+            </article>
+
+            <article class="timeline-item" role="listitem">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-period">Concluído em 2023</span>
+                <h4>Ensino Médio + Técnico em Administração</h4>
+                <p class="timeline-institution">Escola Alexandre de Gusmão – Curso Sequencial</p>
+                <p class="timeline-desc">
+                  Formação integrada com Ensino Médio e habilitação técnica em Administração,
+                  abrangendo rotinas administrativas, organização de processos e ferramentas de escritório.
+                </p>
+                <span class="timeline-badge">Concluído</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Cursos -->
+        <div class="formacao-col">
+          <h3 class="col-title">
+            <span class="col-icon" aria-hidden="true">📜</span> Cursos &amp; Certificações
+          </h3>
+          <div class="cursos-list" role="list" aria-label="Lista de cursos">
+
+            <div class="curso-card" role="listitem">
+              <div class="curso-icon" aria-hidden="true">🌐</div>
+              <div class="curso-info">
+                <h4>Introdução ao Desenvolvimento Web</h4>
+                <p>Conteúdo online autodidata • 2024 • Em andamento</p>
+              </div>
+              <span class="curso-badge">HTML / CSS</span>
+            </div>
+
+            <div class="curso-card" role="listitem">
+              <div class="curso-icon" aria-hidden="true">💡</div>
+              <div class="curso-info">
+                <h4>Lógica de Programação para Iniciantes</h4>
+                <p>Conteúdo online autodidata • 2024 • Em andamento</p>
+              </div>
+              <span class="curso-badge">Lógica</span>
+            </div>
+
+            <div class="curso-card" role="listitem">
+              <div class="curso-icon" aria-hidden="true">🖥️</div>
+              <div class="curso-info">
+                <h4>Informática Básica e Intermediária</h4>
+                <p>Formação técnica • Escola Alexandre de Gusmão • 2023</p>
+              </div>
+              <span class="curso-badge">Informática</span>
+            </div>
+
+            <div class="curso-card" role="listitem">
+              <div class="curso-icon" aria-hidden="true">📋</div>
+              <div class="curso-info">
+                <h4>Pacote Office – Word, Excel e PowerPoint</h4>
+                <p>Formação técnica • Escola Alexandre de Gusmão • 2022</p>
+              </div>
+              <span class="curso-badge">Office</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Idiomas: APENAS Português conforme solicitado -->
+        <div class="formacao-col">
+          <h3 class="col-title">
+            <span class="col-icon" aria-hidden="true">🌍</span> Idiomas
+          </h3>
+          <div class="idiomas-list" role="list" aria-label="Idiomas falados">
+
+            <div class="idioma-card" role="listitem">
+              <div class="idioma-flag" aria-hidden="true">🇧🇷</div>
+              <div class="idioma-info">
+                <h4>Português</h4>
+                <p>Nativo</p>
+              </div>
+              <div class="idioma-level" aria-label="Nível: Nativo">
+                <span class="level-dot active" aria-hidden="true"></span>
+                <span class="level-dot active" aria-hidden="true"></span>
+                <span class="level-dot active" aria-hidden="true"></span>
+                <span class="level-dot active" aria-hidden="true"></span>
+                <span class="level-dot active" aria-hidden="true"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SEÇÃO: PORTFÓLIO
+  =============================================== -->
+  <section id="portfolio" class="section portfolio-section" aria-labelledby="portfolio-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">03.</span>
+        <h2 id="portfolio-titulo" class="section-title">Projetos</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filter-bar" role="tablist" aria-label="Filtrar projetos por categoria">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+        <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+        <button class="filter-btn" data-filter="app" role="tab" aria-selected="false">App</button>
+        <button class="filter-btn" data-filter="design" role="tab" aria-selected="false">Design</button>
+      </div>
+
+      <!-- Grid de projetos -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Projeto 1 -->
+        <article class="project-card" data-category="web" aria-label="Projeto: Portfólio Pessoal">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #00d4ff;"></div>
+            <span class="project-emoji">🌐</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+              <span class="ptag">JavaScript</span>
+            </div>
+            <h3>Portfólio Pessoal</h3>
+            <p>Site responsivo desenvolvido com HTML5, CSS3 e JavaScript puro para a disciplina de Programação Web na UNINTER.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project-card" data-category="app" aria-label="Projeto: Calculadora Simples">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #7c3aed;"></div>
+            <span class="project-emoji">🧮</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">CSS3</span>
+            </div>
+            <h3>Calculadora Simples</h3>
+            <p>Calculadora web com operações básicas, interface responsiva e feedback visual, desenvolvida em JavaScript puro.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project-card" data-category="web" aria-label="Projeto: Página de Apresentação">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #10b981;"></div>
+            <span class="project-emoji">🚀</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+            </div>
+            <h3>Página de Apresentação</h3>
+            <p>Landing page responsiva com animações CSS, seções organizadas e navegação suave por âncoras.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project-card" data-category="design" aria-label="Projeto: Layout Administrativo">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #f59e0b;"></div>
+            <span class="project-emoji">📊</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS Grid</span>
+              <span class="ptag">JS</span>
+            </div>
+            <h3>Layout Administrativo</h3>
+            <p>Estudo de layout com CSS Grid e Flexbox, incluindo modo escuro e componentes visuais interativos.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 5 -->
+        <article class="project-card" data-category="app" aria-label="Projeto: Formulário de Contato">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #ef4444;"></div>
+            <span class="project-emoji">📬</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">JavaScript</span>
+              <span class="ptag">HTML</span>
+            </div>
+            <h3>Formulário de Contato</h3>
+            <p>Formulário com validação completa em JavaScript, feedback visual e simulação de envio de mensagem.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto 6 -->
+        <article class="project-card" data-category="web" aria-label="Projeto: Currículo Online">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="project-thumb-bg" style="--color: #06b6d4;"></div>
+            <span class="project-emoji">📄</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+              <span class="ptag">JavaScript</span>
+            </div>
+            <h3>Currículo Online</h3>
+            <p>Versão digital de currículo com seções de experiência, formação, habilidades e contato.</p>
+            <div class="project-links">
+              <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="plink plink-code" aria-label="Ver código no GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                Código
+              </a>
+              <a href="https://erikcosta5145.github.io/portfolio-erik" target="_blank" rel="noopener noreferrer" class="plink plink-demo" aria-label="Ver demonstração ao vivo">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <p class="no-projects" id="noProjects" style="display:none;" aria-live="polite">Nenhum projeto nesta categoria ainda.</p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SEÇÃO: CONTATO
+  =============================================== -->
+  <section id="contato" class="section contato-section" aria-labelledby="contato-titulo">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">04.</span>
+        <h2 id="contato-titulo" class="section-title">Contato</h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="contato-grid">
+
+        <!-- Info de contato -->
+        <div class="contato-info">
+          <h3>Vamos conversar? 💬</h3>
+          <p>Estou aberto a oportunidades, parcerias e projetos interessantes. Se quiser bater um papo ou tem alguma ideia, me manda uma mensagem!</p>
+
+          <div class="contact-methods">
+            <a href="mailto:eriknascosta01@gmail.com" class="contact-method">
+              <span class="cm-icon" aria-hidden="true">📧</span>
+              <div>
+                <span class="cm-label">E-mail</span>
+                <span class="cm-value">eriknascosta01@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/eriknascosta" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <span class="cm-icon" aria-hidden="true">💼</span>
+              <div>
+                <span class="cm-label">LinkedIn</span>
+                <span class="cm-value">linkedin.com/in/eriknascosta</span>
+              </div>
+            </a>
+            <!-- GitHub corrigido -->
+            <a href="https://github.com/erikcosta5145" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <span class="cm-icon" aria-hidden="true">🐙</span>
+              <div>
+                <span class="cm-label">GitHub</span>
+                <span class="cm-value">github.com/erikcosta5145</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulário -->
+        <div class="contato-form-wrapper">
+          <div id="formSuccess" class="form-success" role="alert" aria-live="assertive" style="display:none;">
+            <span class="success-icon" aria-hidden="true">✅</span>
+            <p>Mensagem enviada com sucesso! Em breve entrarei em contato.</p>
+          </div>
+
+          <div id="formContainer">
+            <div class="form-group">
+              <label for="nome">Nome completo <span class="required" aria-label="campo obrigatório">*</span></label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" aria-required="true" aria-describedby="nome-error" />
+              <span class="field-error" id="nome-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail <span class="required" aria-label="campo obrigatório">*</span></label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" aria-required="true" aria-describedby="email-error" />
+              <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Mensagem <span class="required" aria-label="campo obrigatório">*</span></label>
+              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." aria-required="true" aria-describedby="mensagem-error"></textarea>
+              <span class="field-error" id="mensagem-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <p class="char-counter" id="charCounter" aria-live="polite">0 / 500 caracteres</p>
+
+            <button type="button" class="btn btn-primary btn-full" id="submitBtn" onclick="enviarFormulario()">
+              <span id="btnText">Enviar mensagem</span>
+              <span id="btnLoader" style="display:none;" aria-hidden="true">⏳ Enviando...</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="currentYear"></span> Erik Nascimento da Costa · Desenvolvido com HTML5, CSS3 &amp; JavaScript puro
+      </p>
+      <nav class="footer-nav" aria-label="Links rápidos no rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#formacao">Formação</a>
+        <a href="#portfolio">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo da página" style="display:none;">↑</button>
+
+  <!-- Modal confirmação -->
+  <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-icon" aria-hidden="true">🎉</div>
+      <h3 id="modal-title">Mensagem enviada com sucesso!</h3>
+      <p>Obrigado pelo contato. Responderei em até 24 horas.</p>
+      <button class="btn btn-primary" onclick="fecharModal()" aria-label="Fechar confirmação">Fechar</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
